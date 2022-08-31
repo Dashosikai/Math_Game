@@ -1,9 +1,31 @@
+def statement_generator(statement, decoration):
+
+
+    side = decoration * 4
+
+    statement = "{} {} {}".format(side, statement, side)
+    
+    top_bottom = "*" * len(statement)
+    
+    print(top_bottom)
+    print(statement)
+    print(top_bottom)
+
+statement_generator("Welcome to my Math Quiz Game", "*")
+print()
+statement_generator("INSTRUCTIONS", "")
+print()
+statement_generator("You will be asked how much questions you would like.", "")
+statement_generator("Next you will have to answer the number of qestions you have asked for", "")
+statement_generator("you have asked for or type 'xxx' for infinite.", "")
+print()
+
 # Function go here
 def number_checker(question):
     while True:
         response = input(question)
 
-        round_error = "Please tytpe either <enter> or an " \
+        round_error = "Please type either <enter> or an " \
                       "or an integer that is more than 0\n"
 
         # If infinite mode not chosen, check response
@@ -28,7 +50,7 @@ def number_checker(question):
 
 questions_asked = 0
 
-how_many = number_checker("How many questions? Type 'xxx' for infinite")
+how_many = number_checker("How many questions? Type 'xxx' for infinite ")
 
 if how_many == "xxx":
     mode = "infinite"
